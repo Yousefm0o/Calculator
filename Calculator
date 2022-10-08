@@ -1,0 +1,396 @@
+from tkinter import *
+from math import *
+
+HEIGHT = 500
+WIDTH = 450
+word=""
+word1=""
+operation=""
+word2=""
+L1=True
+Point_float1=""
+Point_float2=""
+Float=False
+square=False
+SQRT=False
+
+def click_11():
+    global operation, L1, square, SQRT
+    operation = " + "
+    square=False
+    SQRT=False
+    LABEL2['text']=operation
+    L1=False
+
+def click_15():
+    global operation, L1, square, SQRT
+    operation = " - "
+    square=False
+    SQRT=False
+    LABEL2['text']=operation
+    L1=False
+
+def click_16():
+    global operation, L1, square, SQRT
+    operation = " x "
+    square=False
+    SQRT=False
+    LABEL2['text']=operation
+    L1=False
+
+def click_17():
+    global operation, L1, square, SQRT
+    operation = " ÷ "
+    square=False
+    SQRT=False
+    LABEL2['text']=operation
+    L1=False
+
+def click_18():
+    global operation, L1, square
+    operation = " ^ "
+    LABEL2['text']=operation
+    LABEL3['text']='2'
+    square=True
+    L1=False
+
+def click_19():
+    global operation, L1, square, SQRT
+    operation = " ^ "
+    square=False
+    SQRT=False
+    LABEL2['text']=operation
+    square=False
+    L1=False
+
+def click_20():
+    global operation, L1, SQRT
+    operation = " √ "
+    LABEL2['text']=operation
+    SQRT=True
+    L1=False
+
+
+def click_12():
+    if operation==" + ":
+     if Float==True:
+      result = float(word1) + float(word2)
+      LABEL4['text']='result= '+str(result)
+     else:
+      result = int(word1) + int(word2)
+      LABEL4['text']='result= '+str(result)
+
+    elif operation==" - ":
+     if Float==True:
+      result = float(word1) - float(word2)
+      LABEL4['text']='result= '+str(result)
+     else:
+      result = int(word1) - int(word2)
+      LABEL4['text']='result= '+str(result)
+
+    elif operation==" x ":
+     if Float==True:
+      result = float(word1) * float(word2)
+      LABEL4['text']='result= '+str(result)
+     else:
+      result = int(word1) * int(word2)
+      LABEL4['text']='result= '+str(result)
+
+    elif operation==" ÷ ":
+     if Float==True:
+      result = float(word1) / float(word2)
+      LABEL4['text']='result= '+str(result)
+     else:
+      result = int(word1) / int(word2)
+      LABEL4['text']='result= '+str(result)
+
+    elif operation==" ^ " and square==True:
+     if Float==True:
+      result = pow (float(word1),float(word2))
+      LABEL4['text']='result= '+str(result)
+     else:
+      result = pow (int(word1),2)
+      LABEL4['text']='result= '+str(result)
+
+    elif operation==" ^ " and square==False:
+     if Float==True:
+      result = pow (float(word1),float(word2))
+      LABEL4['text']='result= '+str(result)
+     else:
+      result = pow (int(word1),int(word2))
+      LABEL4['text']='result= '+str(result)
+
+    elif operation==" √ ":
+     if Float==True:
+      result = sqrt (float(word1))
+      LABEL4['text']='result= '+str(result)
+     else:
+      result = sqrt (int(word1))
+      LABEL4['text']='result= '+str(result)
+
+
+def click_13():
+    global word1, word2, operation, L1, Float, square,SQRT
+    if L1==True and operation=="":
+     if Point_float1==".":
+        Float=False
+     word1=""
+     LABEL1['text']=word1
+    elif operation!="" and word2=="":
+     operation=""
+     if square==True or SQRT==True:
+      square=False
+      SQRT=False
+      word2=""
+      LABEL3['text']=word2
+     L1=True
+     LABEL2['text']=operation
+    else:
+     if Point_float2==".":
+        Float=False
+     word2=""
+     LABEL3['text']=word2
+
+def click_14():
+    global word1,word2,operation,L1,Float,square,SQRT
+    word1=""
+    word2=""
+    operation=""
+    LABEL1['text']=word1
+    LABEL3['text']=word2
+    LABEL4['text']=""
+    LABEL2['text']=operation
+    L1=True
+    Float=False
+    square=False
+    SQRT=False
+
+
+def click_1():
+    if L1==True:
+     global word1
+     word1 += '1'
+     LABEL1['text']=word1
+
+    else:
+     global word2
+     if square==False and SQRT==False:
+      word2 += '1'
+      LABEL3['text']=word2
+
+def click_2():
+    if L1==True:
+     global word1
+     word1 += '2'
+     LABEL1['text']=word1
+    
+    else:
+     global word2
+     if square==False and SQRT==False:   
+      word2 += '2'
+      LABEL3['text']=word2
+
+def click_3():
+    if L1==True:
+     global word1
+     word1 += '3'
+     LABEL1['text']=word1
+    
+    else:
+     global word2
+     if square==False and SQRT==False:
+      word2 += '3'
+      LABEL3['text']=word2
+
+def click_4():
+    if L1==True:
+     global word1
+     word1 += '4'
+     LABEL1['text']=word1
+    
+    else:
+     global word2
+     if square==False and SQRT==False:
+      word2 += '4'
+      LABEL3['text']=word2
+
+def click_5():
+    if L1==True:
+     global word1
+     word1 += '5'
+     LABEL1['text']=word1
+    
+    else:
+     global word2
+     if square==False and SQRT==False:
+      word2 += '5'
+      LABEL3['text']=word2
+
+def click_6():
+    if L1==True:
+     global word1
+     word1 += '6'
+     LABEL1['text']=word1
+    
+    else:
+     global word2
+     if square==False and SQRT==False:
+      word2 += '6'
+      LABEL3['text']=word2
+
+def click_7():
+    if L1==True:
+     global word1
+     word1 += '7'
+     LABEL1['text']=word1
+    
+    else:
+     global word2
+     if square==False and SQRT==False: 
+      word2 += '7'
+      LABEL3['text']=word2
+
+def click_8():
+    if L1==True:
+     global word1
+     word1 += '8'
+     LABEL1['text']=word1
+    
+    else:
+     global word2
+     if square==False and SQRT==False:
+      word2 += '8'
+      LABEL3['text']=word2
+
+def click_9():
+    if L1==True:
+     global word1
+     word1 += '9'
+     LABEL1['text']=word1
+    
+    else:
+     global word2
+     if square==False and SQRT==False:
+      word2 += '9'
+      LABEL3['text']=word2
+
+def click_0():
+    if L1==True:
+     global word1
+     word1 += '0'
+     LABEL1['text']=word1
+    
+    else:
+     global word2
+     if square==False and SQRT==False:
+      word2 += '0'
+      LABEL3['text']=word2
+
+
+def click_():
+    global Float, Point_float1
+    if L1==True:
+     global word1
+     Point_float1='.'
+     word1 += Point_float1
+     Float = True
+     LABEL1['text']=word1
+    
+    else:
+     global word2, Point_float2
+     if square==False and SQRT==False: 
+      Point_float2='.'
+      word2 += Point_float2
+      Float = True
+      LABEL3['text']=word2
+
+
+WINDOW = Tk()
+WINDOW.title('Calculator')
+
+CANVAS = Canvas(WINDOW,height=HEIGHT,width=WIDTH)
+CANVAS.pack()
+
+BG_label = Label(WINDOW,bg='#330000',bd=10)
+BG_label.place(relheight=1,relwidth=1)
+
+BUTTON_1 = Button(BG_label,text='7',font=25,command=click_7,activebackground='black',activeforeground='white')
+BUTTON_1.place(relx=0.15,rely=0.3,relheight=0.1,relwidth=0.1)
+
+BUTTON_2 = Button(BG_label,text='8',font=25,command=click_8,activebackground='black',activeforeground='white')
+BUTTON_2.place(relx=0.3,rely=0.3,relheight=0.1,relwidth=0.1)
+
+BUTTON_3 = Button(BG_label,text='9',font=25,command=click_9,activebackground='black',activeforeground='white')
+BUTTON_3.place(relx=0.45,rely=0.3,relheight=0.1,relwidth=0.1)
+
+BUTTON_4 = Button(BG_label,text='4',font=25,command=click_4,activebackground='black',activeforeground='white')
+BUTTON_4.place(relx=0.15,rely=0.45,relheight=0.1,relwidth=0.1)
+
+BUTTON_5 = Button(BG_label,text='5',font=25,command=click_5,activebackground='black',activeforeground='white')
+BUTTON_5.place(relx=0.3,rely=0.45,relheight=0.1,relwidth=0.1)
+
+BUTTON_6 = Button(BG_label,text='6',font=25,command=click_6,activebackground='black',activeforeground='white')
+BUTTON_6.place(relx=0.45,rely=0.45,relheight=0.1,relwidth=0.1)
+
+BUTTON_7 = Button(BG_label,text='1',font=25,command=click_1,activebackground='black',activeforeground='white')
+BUTTON_7.place(relx=0.15,rely=0.6,relheight=0.1,relwidth=0.1)
+
+BUTTON_8 = Button(BG_label,text='2',font=25,command=click_2,activebackground='black',activeforeground='white')
+BUTTON_8.place(relx=0.3,rely=0.6,relheight=0.1,relwidth=0.1)
+
+BUTTON_9 = Button(BG_label,text='3',font=25,command=click_3,activebackground='black',activeforeground='white')
+BUTTON_9.place(relx=0.45,rely=0.6,relheight=0.1,relwidth=0.1)
+
+BUTTON_0 = Button(BG_label,text='0',font=25,command=click_0,activebackground='black',activeforeground='white')
+BUTTON_0.place(relx=0.3,rely=0.75,relheight=0.1,relwidth=0.1)
+
+BUTTON_ = Button(BG_label,text='.',font=25,command=click_,activebackground='black',activeforeground='white')
+BUTTON_.place(relx=0.45,rely=0.75,relheight=0.1,relwidth=0.1)
+
+BUTTON_11 = Button(BG_label,text='+',font=30,command=click_11,activebackground='black',activeforeground='white')
+BUTTON_11.place(relx=0.85,rely=0.75,relheight=0.1,relwidth=0.1)
+
+BUTTON_12 = Button(BG_label,text='-',font=30,command=click_15,activebackground='black',activeforeground='white')
+BUTTON_12.place(relx=0.85,rely=0.6,relheight=0.1,relwidth=0.1)
+
+BUTTON_13 = Button(BG_label,text='x',font=30,command=click_16,activebackground='black',activeforeground='white')
+BUTTON_13.place(relx=0.85,rely=0.45,relheight=0.1,relwidth=0.1)
+
+BUTTON_14 = Button(BG_label,text='÷',font=30,command=click_17,activebackground='black',activeforeground='white')
+BUTTON_14.place(relx=0.7,rely=0.45,relheight=0.1,relwidth=0.1)
+
+BUTTON_15 = Button(BG_label,text='A^2',font=25,command=click_18,activebackground='black',activeforeground='white')
+BUTTON_15.place(relx=0.7,rely=0.6,relheight=0.1,relwidth=0.1)
+
+BUTTON_16 = Button(BG_label,text='A^n',font=25,command=click_19,activebackground='black',activeforeground='white')
+BUTTON_16.place(relx=0.7,rely=0.75,relheight=0.1,relwidth=0.1)
+
+BUTTON_17 = Button(BG_label,text='√',font=30,command=click_20,activebackground='black',activeforeground='white')
+BUTTON_17.place(relx=0.7,rely=0.9,relheight=0.1,relwidth=0.1)
+
+BUTTON_12 = Button(BG_label,text='=',font=30,command=click_12,activebackground='black',activeforeground='white')
+BUTTON_12.place(relx=0.85,rely=0.9,relheight=0.1,relwidth=0.1)
+
+BUTTON_13 = Button(BG_label,text='CE',font=25,command=click_13,activebackground='black',activeforeground='white')
+BUTTON_13.place(relx=0.7,rely=0.3,relheight=0.1,relwidth=0.1)
+
+BUTTON_14 = Button(BG_label,text='C',font=25,command=click_14,activebackground='black',activeforeground='white')
+BUTTON_14.place(relx=0.85,rely=0.3,relheight=0.1,relwidth=0.1)
+
+
+FRAME = Frame(BG_label,bg='black',bd=5)
+FRAME.place(relx=0,rely=0.05,relheight=0.1,relwidth=1)
+
+LABEL1 = Label(FRAME,font=25)
+LABEL1.place(relx=0,rely=0,relheight=1,relwidth=0.23)
+
+LABEL2 = Label(FRAME,font=25)
+LABEL2.place(relx=0.23,rely=0,relheight=1,relwidth=0.1)
+
+LABEL3 = Label(FRAME,font=25)
+LABEL3.place(relx=0.33,rely=0,relheight=1,relwidth=0.25)
+
+LABEL4 = Label(FRAME,font=25,anchor='w')
+LABEL4.place(relx=0.60,rely=0,relheight=1,relwidth=0.4)
+
+WINDOW.mainloop()
